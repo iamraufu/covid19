@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID 19 Statistics</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>COVID 19 Statistics <small><br>By <span id="name">Raufu Prezens</span></small></h1>
+    <div class="line"></div>
+    <h2 id="date"></h2>
+    <div class="search-div">
+        <input id="search-field" type="text" class="search-box" placeholder="Search By Country" autocomplete="off">
+        <button id="search-button" onclick="searchCountry()" class="search-button">Search</button>
+    </div>
+    <p id="error">*Incorrect Country Name*</p>
+    <div id="global-statistics">Wait For API To Load</div>
+    <div id="country-statistics"></div>
+</body>
+
+</html>
