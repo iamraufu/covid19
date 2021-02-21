@@ -31,6 +31,7 @@ const displayGlobalData = global => {
 }
 
 const searchCountry = () => {
+    document.getElementById("country-statistics").innerText = '';
     fetch('https://api.covid19api.com/summary', {
             "method": 'GET',
             "mode": "cors",
@@ -41,7 +42,6 @@ const searchCountry = () => {
         })
         .then(response => response.json())
         .then(json => displayCountryData(json.Countries))
-        .error(error => console.log(error))
 }
 
 const displayCountryData = countries => {
@@ -49,6 +49,7 @@ const displayCountryData = countries => {
         const countryName = countries[i].Country;
         const countryName2 = countries[i].Slug;
         let inputText = document.getElementById('search-field').value;
+
         if (countryName === inputText || countryName2 === inputText) {
             const countryContainer = document.getElementById('country-statistics');
             const countryDiv = document.createElement('div');
@@ -63,10 +64,7 @@ const displayCountryData = countries => {
                 `;
             countryContainer.appendChild(countryDiv);
             document.getElementById('country-statistics').style.display = 'block';
-            document.getElementById('error').style.display = 'none';
-            inputText.innerText = " ";
-        } else {
-            document.getElementById('error').style.display = 'block';
+            document.getElementById("search-field").value = "";
         }
     }
 }
